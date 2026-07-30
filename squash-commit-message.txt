@@ -1,0 +1,7 @@
+fix(security): route invoice repayment through escrow contract — squash PR changes
+
+This commit squashes the PR changes into a single commit:
+- Adds EscrowContract DataKey and set_escrow_contract entry point
+- Routes repay/repay_early through escrow (buyer -> escrow -> pool)
+- Adds MockEscrow in invoice tests and wires test suites to set escrow
+- Updates pool tests to set invoice.set_escrow_contract
