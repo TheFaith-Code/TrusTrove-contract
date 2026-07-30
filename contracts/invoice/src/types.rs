@@ -85,7 +85,6 @@ pub enum DataKey {
     Admin,
     RegistryContract,
     PoolContract,
-    EscrowContract,
     Counter,
     Invoice(BytesN<32>),
     IssuerIndexCount(Address),
@@ -98,6 +97,9 @@ pub enum DataKey {
     ExpiryWindow,
     SupportedAsset(Address),
     SupportedAssetCount,
+    // EscrowContract intentionally last to avoid changing enum discriminants for
+    // already-deployed contract storage keys.
+    EscrowContract,
 }
 
 impl InvoiceStatus {
